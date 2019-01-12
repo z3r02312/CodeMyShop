@@ -49,6 +49,6 @@ const styles = StyleSheet.create({
         width: 20, height: 20
     },
     titleStyle:{
-        color:'#FFF',fontFamily:'Tahoma'
+        color:'#FFF',fontFamily:'roboto'
     }
 })
