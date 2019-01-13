@@ -29,9 +29,6 @@ const styles = StyleSheet.create({
         height: height * 0.33,
         backgroundColor: '#fff',
         margin: 10,
-        shadowColor: '#6A6A6A',
-        shadowOffset: { width: 0, height: 3 },
-        shadowOpacity: 0.2
     },
     textStyle: {
         fontSize: 15,

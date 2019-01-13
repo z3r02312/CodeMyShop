@@ -9,7 +9,7 @@ export default class Header extends Component {
         return (
             <View style={styles.wrapper}>
                 <View style={styles.row1}>
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={this.props.onOpen}>
                         <Image
                             source={require('../../../media/appIcon/ic_menu.png')}
                             style={styles.icon}
@@ -21,15 +21,10 @@ export default class Header extends Component {
                         style={styles.icon}
                     />
                 </View>
-                <TextInput 
-                style={styles.textInput}
-                placeholder='What do you want to buy?'
+                <TextInput
+                    style={styles.textInput}
+                    placeholder='What do you want to buy?'
                 />
-
-
-                {/* <TouchableOpacity onPress={this.props.onOpen}>
-            <Text>Open Menu</Text>
-        </TouchableOpacity> */}
             </View>
         )
     }
@@ -37,18 +32,18 @@ export default class Header extends Component {
 
 const styles = StyleSheet.create({
     wrapper: {
-        height: height / 8, backgroundColor: '#2AA189', padding:8, justifyContent:'space-around'
+        height: height / 8, backgroundColor: '#2AA189', padding: 8, justifyContent: 'space-around'
     },
     row1: {
-        flexDirection: 'row', justifyContent: 'space-between',paddingBottom:4
+        flexDirection: 'row', justifyContent: 'space-between', paddingBottom: 4
     },
     textInput: {
-        height: height / 20, backgroundColor: 'white', fontSize:11,color:'#717171',paddingTop:0,paddingBottom:0
+        height: height / 20, backgroundColor: 'white', fontSize: 11, color: '#717171', paddingTop: 0, paddingBottom: 0
     },
     icon: {
         width: 20, height: 20
     },
-    titleStyle:{
-        color:'#FFF',fontFamily:'roboto'
+    titleStyle: {
+        color: '#FFF', fontFamily: 'roboto'
     }
 })
