@@ -5,20 +5,22 @@ import { TextInput } from 'react-native-gesture-handler';
 const { height } = Dimensions.get('screen');
 
 export default class Header extends Component {
+
     render() {
+        const { wrapper, row1, icon, titleStyle } = styles;
         return (
-            <View style={styles.wrapper}>
-                <View style={styles.row1}>
+            <View style={wrapper}>
+                <View style={row1}>
                     <TouchableOpacity onPress={this.props.onOpen}>
                         <Image
                             source={require('../../../media/appIcon/ic_menu.png')}
-                            style={styles.icon}
+                            style={icon}
                         />
                     </TouchableOpacity>
-                    <Text style={styles.titleStyle}>Wearing a Dress</Text>
+                    <Text style={titleStyle}>Wearing a Dress</Text>
                     <Image
                         source={require('../../../media/appIcon/ic_logo.png')}
-                        style={styles.icon}
+                        style={icon}
                     />
                 </View>
                 <TextInput

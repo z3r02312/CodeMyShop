@@ -5,14 +5,17 @@ class Menu extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            isLogedIn: true
+            isLogedIn: false
         }
     }
     render() {
-        const { wrapper, imgProfile, btnStyle, btnSignIn, btnLogin, txtName,loginStyle } = styles;
+        const { navigate } = this.props.navigation;
+        const { wrapper, imgProfile, btnStyle, btnSignIn, btnLogin, txtName, loginStyle } = styles;
         const logOut = (
             <View>
-                <TouchableOpacity style={btnStyle}>
+                <TouchableOpacity
+                    style={btnStyle}
+                    onPress={() => navigate('Authentication')}>
                     <Text style={btnSignIn}>Sign In</Text>
                 </TouchableOpacity>
             </View>
@@ -21,13 +24,19 @@ class Menu extends Component {
             <View style={loginStyle}>
                 <Text style={txtName}>Tran Quang Tien</Text>
                 <View style={{ marginTop: 50 }}>
-                    <TouchableOpacity style={btnStyle}>
+                    <TouchableOpacity
+                        style={btnStyle}
+                        onPress={() => navigate('OrderHistory')}>
                         <Text style={btnLogin}>Order History</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={btnStyle}>
+                    <TouchableOpacity
+                        style={btnStyle}
+                        onPress={() => navigate('ChangeInfo')}>
                         <Text style={btnLogin}>Change Info</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={btnStyle}>
+                    <TouchableOpacity
+                        style={btnStyle}
+                        onPress={() => navigate('OrderHistory')}>
                         <Text style={btnLogin}>Sign Out</Text>
                     </TouchableOpacity>
                 </View>
@@ -38,31 +47,6 @@ class Menu extends Component {
             <View style={wrapper}>
                 <Image source={require('../../media/temp/profile.png')} style={imgProfile} />
                 {mainJSX}
-
-
-
-
-                {/* <TouchableOpacity
-                    onPress={() => this.props.navigation.navigate('Authentication')
-                    }>
-                    <Text
-                        style={{ margin: 40, color: 'white' }}
-                    >Go to Authentication</Text>
-                </TouchableOpacity>
-                <TouchableOpacity
-                    onPress={() => this.props.navigation.navigate('ChangeInfo')
-                    }>
-                    <Text
-                        style={{ margin: 40, color: 'white' }}
-                    >Go to ChangeInfo</Text>
-                </TouchableOpacity>
-                <TouchableOpacity
-                    onPress={() => this.props.navigation.navigate('OrderHistory')
-                    }>
-                    <Text
-                        style={{ margin: 40, color: 'white' }}
-                    >Go to OrderHistory</Text>
-                </TouchableOpacity> */}
             </View>
         );
     }
@@ -104,8 +88,8 @@ const styles = StyleSheet.create({
         color: '#fff',
         fontSize: 13,
     },
-    loginStyle:{
-        flex:1,
-        alignItems:'center'
+    loginStyle: {
+        flex: 1,
+        alignItems: 'center'
     }
 })
